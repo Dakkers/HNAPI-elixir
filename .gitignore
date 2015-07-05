@@ -1,0 +1,5 @@
+_build/
+deps/
+ebin/
+erl_crash.dump
+*.ez
