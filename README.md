@@ -11,7 +11,7 @@ iex> HNAPI.start
 (This is to initialize HTTPotion). Then any of the methods can be called.
 
 ## API
-The Poison module has two ways of decoding JSON data; one way is by putting the data into a previously defined struct, and the other way is by parsing the data on-the-fly. Both ways are supported here; several structs are predefined for convienience, and they have the same fields as described in the HN API.
+The Poison module has two ways of decoding JSON data; one way is by putting the data into a previously defined struct, and the other way is by parsing the data on-the-fly. Both ways are supported here; several structs are predefined for convenience, and they have the same fields as described in the HN API.
 
 ### Structs
 The following structs are defined:
@@ -73,7 +73,7 @@ Gets the IDs of the top `limit` stories as a list of integers. `limit` must be a
 Gets the IDs of the top 500 stories as a list of integers that are of the type `item_type`. `item_type` must be a string.
 
 #### `top_stories_by_id(item_type, limit)`
-Gets the IDs of the top `limit` stories as a list of integers that are of the type `item_type`. `item_type` must be a string.
+Gets the IDs of the top `limit` stories as a list of integers that are of the type `item_type`. `item_type` must be a string, and `limit` must be an integer.
 
 #### `top_stories_detailed`
 Gets all information of the top 500 stories as a list of integers.
@@ -85,7 +85,7 @@ Gets all information of the top `limit` stories as a list of integers. `limit` m
 Gets all information of the top 500 stories as a list of integers that are of the type `item_type`. `item_type` must be a string.
 
 #### `top_stories_detailed(item_type, limit)`
-Gets all information of the top `limit` stories as a list of integers that are of the type `item_type`. `item_type` must be a string.
+Gets all information of the top `limit` stories as a list of integers that are of the type `item_type`. `item_type` must be a string, and `limit` must be an integer.
 
 #### `new_stories_by_id`
 Gets the IDs of the newest 500 stories as a list of integers.
@@ -97,7 +97,7 @@ Gets the IDs of the newest `limit` stories as a list of integers. `limit` must b
 Gets the IDs of the newest 500 stories as a list of integers that are of the type `item_type`. `item_type` must be a string.
 
 #### `new_stories_by_id(item_type, limit)`
-Gets the IDs of the newest `limit` stories as a list of integers that are of the type `item_type`. `item_type` must be a string.
+Gets the IDs of the newest `limit` stories as a list of integers that are of the type `item_type`. `item_type` must be a string, and `limit` must be an integer.
 
 #### `new_stories_detailed`
 Gets all information of the 500 newest stories as a list of integers.
@@ -109,4 +109,7 @@ Gets all information of the `limit` newest stories as a list of integers. `limit
 Gets all information of the 500 newest stories as a list of integers that are of the type `item_type`. `item_type` must be a string.
 
 #### `new_stories_detailed(item_type, limit)`
-Gets all information of the `limit` newest stories as a list of integers that are of the type `item_type`. `item_type` must be a string.
+Gets all information of the `limit` newest stories as a list of integers that are of the type `item_type`. `item_type` must be a string, and `limit` must be an integer.
+
+## License
+GPL
