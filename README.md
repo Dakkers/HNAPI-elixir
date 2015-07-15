@@ -1,5 +1,16 @@
-# hnapi-elixir
+# HNAPI-elixir
 elixir wrapper for the HackerNews API
+
+# Installation
+Add HNAPI as a dependency to your `mix.exs` file:
+
+```
+defp deps do
+  [
+    {:hnapi, git: "https://github.com/SaintDako/HNAPI-elixir.git", branch: "master"},
+  ]
+end
+```
 
 ## Usage
 Because I have no idea how to really use Elixir properly (at least the module system), HNAPI must be started:
@@ -8,7 +19,21 @@ Because I have no idea how to really use Elixir properly (at least the module sy
 iex> HNAPI.start
 ```
 
-(This is to initialize HTTPotion). Then any of the methods can be called.
+(This is to initialize HTTPotion). Then any of the methods can be called, like so:
+
+```
+iex> HNAPI.top_stories_by_id(20)      # get the IDs of the top 20 stories
+[9889152, 9889399, 9888442, 9884915, 9886817, 9886555, 9884165, 9887731,
+ 9888387, 9887664, 9887728, 9886640, 9886103, 9887802, 9888035, 9887787,
+ 9887548, 9887231, 9889210, 9884974]
+
+iex> HNAPI.get_item(9889152)          # this was the first ID returned before, let's get its details
+%{"by" => "aestetix", "descendants" => 23, "id" => 9889152,
+  "kids" => [9889271, 9889488, 9889322, 9889292, 9889317, 9889214],
+  "score" => 87, "text" => "", "time" => 1436922689,
+  "title" => "New Horizons phones home", "type" => "story",
+  "url" => "http://www.bbc.com/news/science-environment-33531811"}
+```
 
 ## API
 The Poison module has two ways of decoding JSON data; one way is by putting the data into a previously defined struct, and the other way is by parsing the data on-the-fly. Both ways are supported here; several structs are predefined for convenience, and they have the same fields as described in the HN API.
